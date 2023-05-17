@@ -12,4 +12,11 @@ export default {
     green: "#1E9400",
     red: "#FF0000",
   },
+  font: {
+    small: "14px",
+    xSmall: "16px",
+    large: "28px",
+    medium: "20px",
+    xMedium: "18px",
+  },
 };
