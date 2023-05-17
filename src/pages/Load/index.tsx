@@ -38,17 +38,10 @@ export function Load() {
 
   return (
     <S.Container>
-      {/* TODO refactor this component */}
-      <Animated.View
+      <S.Detail
         layout={Layout.springify().mass(1).stiffness(100)}
         entering={SlideInUp.springify().mass(1).stiffness(90)}
         style={{
-          width: 360,
-          height: 366,
-          backgroundColor: "#eeeeee",
-          opacity: 0.1,
-          position: "absolute",
-          borderRadius: 50,
           top: -20,
           transform: [
             {
@@ -63,7 +56,7 @@ export function Load() {
 
       <Wallet startAnimation={startAnimation} />
 
-      <Animated.View
+      <S.Detail
         layout={Layout.springify()}
         entering={SlideInDown.springify()
           .mass(1)
@@ -76,12 +69,6 @@ export function Load() {
           })}
         style={[
           {
-            backgroundColor: "#eeeeee",
-            opacity: 0.1,
-            width: 360,
-            height: 366,
-            position: "absolute",
-            borderRadius: 50,
             bottom: -10,
             transform: [
               {

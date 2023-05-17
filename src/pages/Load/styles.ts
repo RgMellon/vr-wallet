@@ -15,3 +15,14 @@ export const Container = styled(AnimatedView)`
     align-items: center;
   `}
 `;
+
+export const Detail = styled(AnimatedView)`
+  ${({ theme }) => css`
+    width: 360px;
+    height: 366px;
+    opacity: 0.1;
+    background-color: ${theme.colors.lightGrey};
+    position: absolute;
+    border-radius: 50px;
+  `}
+`;
