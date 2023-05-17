@@ -3,6 +3,7 @@ import * as S from "./styles";
 import upDetailBackground from "../../assets/img/background/up.png";
 import downDetailBackground from "../../assets/img/background/down.png";
 import { Image } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 type Props = {
   children: React.ReactNode;
@@ -11,6 +12,8 @@ type Props = {
 export function Main({ children }: Props) {
   return (
     <S.Container>
+      <StatusBar translucent backgroundColor="transparent" style="light" />
+
       <Image
         source={upDetailBackground}
         resizeMode="contain"

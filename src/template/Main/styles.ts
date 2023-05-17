@@ -4,7 +4,7 @@ export const Container = styled.View`
   ${({ theme }) => css`
     flex: 1;
     background-color: ${theme.colors.blueDark};
-    position: relative;
-    padding: 20px;
+
+    padding: 25px;
   `}
 `;
