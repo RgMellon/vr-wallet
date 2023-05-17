@@ -1,23 +1,23 @@
-import { TouchableOpacityProps } from "react-native";
+import { TouchableOpacityProps } from 'react-native';
 
-import * as S from "./style";
+import * as S from './style';
 
-export type BEHAVIOR = "primary" | "secondary" | "disabled";
+export type BEHAVIOR = 'primary' | 'secondary' | 'disabled';
 
 type Props = {
-  typeButton: BEHAVIOR;
+  typeButton?: BEHAVIOR;
   text: string;
   full?: boolean;
 } & TouchableOpacityProps;
 
 export function Button({
-  typeButton = "primary",
+  typeButton = 'primary',
   full = false,
   text,
   ...rest
 }: Props) {
   return (
-    <S.Container type={typeButton} full={full} {...rest}>
+    <S.Container type={typeButton} full={full} {...rest} testID="button">
       <S.LabelButton type={typeButton} full={full}>
         {text}
       </S.LabelButton>

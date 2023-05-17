@@ -1,7 +1,7 @@
-import { TouchableOpacity } from "react-native";
-import styled, { DefaultTheme, css } from "styled-components/native";
+import { TouchableOpacity } from 'react-native';
+import styled, { DefaultTheme, css } from 'styled-components/native';
 
-import { BEHAVIOR } from ".";
+import { BEHAVIOR } from '.';
 
 type Props = {
   type: BEHAVIOR;
@@ -24,7 +24,7 @@ const containerModifier = {
 
 export const Container = styled(TouchableOpacity)<Props>`
   ${({ theme, type, full }) => css`
-    width: ${full ? "100%" : "300px"};
+    width: ${full ? '100%' : '300px'};
     height: 60px;
     justify-content: center;
     align-items: center;
