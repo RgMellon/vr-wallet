@@ -1,24 +1,26 @@
-import {
-  Text,
-  Touchable,
-  TouchableOpacity,
-  TouchableOpacityProps,
-} from "react-native";
+import { TouchableOpacityProps } from "react-native";
 
 import * as S from "./style";
-import theme from "../../styles/theme";
 
-export type COLOR = "primary" | "secondary";
+export type BEHAVIOR = "primary" | "secondary" | "disabled";
 
 type Props = {
-  typeButton: COLOR;
+  typeButton: BEHAVIOR;
   text: string;
+  full?: boolean;
 } & TouchableOpacityProps;
 
-export function Button({ typeButton = "primary", text, ...rest }: Props) {
+export function Button({
+  typeButton = "primary",
+  full = false,
+  text,
+  ...rest
+}: Props) {
   return (
-    <S.Container type={typeButton} {...rest}>
-      <S.LabelButton type={typeButton}>{text}</S.LabelButton>
+    <S.Container type={typeButton} full={full} {...rest}>
+      <S.LabelButton type={typeButton} full={full}>
+        {text}
+      </S.LabelButton>
     </S.Container>
   );
 }
