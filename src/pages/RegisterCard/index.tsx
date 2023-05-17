@@ -1,28 +1,28 @@
-import { useForm } from "react-hook-form";
-import { Button } from "../../components/Button";
-import { ControlledInput } from "../../components/ControlledInput";
-import { Main } from "../../template/Main";
+import { useForm } from 'react-hook-form';
+import { Button } from '../../components/Button';
+import { ControlledInput } from '../../components/ControlledInput';
+import { Main } from '../../template/Main';
 
 import {
   ActivityIndicator,
   Platform,
   TouchableWithoutFeedback,
-} from "react-native";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Keyboard } from "react-native";
-import { formatCreditCardNumber } from "../../aux/formatCreditCardNumber";
-import { formatDate } from "../../aux/formatDate";
-import { schema } from "../../aux/schema";
-import theme from "../../styles/theme";
+} from 'react-native';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Keyboard } from 'react-native';
+import { formatCreditCardNumber } from '../../aux/formatCreditCardNumber';
+import { formatDate } from '../../aux/formatDate';
+import { schema } from '../../aux/schema';
+import theme from '../../styles/theme';
 
-import { Title } from "../../components/Title";
+import { Title } from '../../components/Title';
 
-import * as S from "./styles";
+import * as S from './styles';
 
-import { useNavigation } from "@react-navigation/native";
-import { useCreditCard } from "../../hooks/useCreditCard";
-import { Header } from "../../components/Header";
-import { useState } from "react";
+import { useNavigation } from '@react-navigation/native';
+import { useCreditCard } from '../../hooks/useCreditCard';
+import { Header } from '../../components/Header';
+import { useState } from 'react';
 
 export type FormData = {
   card_number: string;
@@ -51,9 +51,9 @@ export function RegisterCard() {
       setLoad(true);
       await handleAddCreditCard(form);
       reset();
-      navigate("resumeCard");
+      navigate('resumeCard');
     } catch (err) {
-      alert("Ops, algo deu errado");
+      alert('Ops, algo deu errado');
     } finally {
       setLoad(false);
     }
@@ -63,7 +63,7 @@ export function RegisterCard() {
     <Main>
       <Header />
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <S.Container behavior={Platform.OS === "ios" ? "padding" : "height"}>
+        <S.Container behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
           <S.WrapperTitle>
             <Title text="Wallet Test" />
           </S.WrapperTitle>
@@ -130,13 +130,13 @@ export function RegisterCard() {
 
           <S.WrapperButton>
             {load ? (
-              <ActivityIndicator size={"small"} />
+              <ActivityIndicator size={'small'} />
             ) : (
               <Button
                 full
                 text="avançar"
                 typeButton={
-                  Object.keys(errors).length > 0 ? "disabled" : "primary"
+                  Object.keys(errors).length > 0 ? 'disabled' : 'primary'
                 }
                 onPress={handleSubmit(handleRegister)}
               />

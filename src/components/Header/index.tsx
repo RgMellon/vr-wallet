@@ -1,9 +1,9 @@
-import { NativeModules, Platform, Text, View } from "react-native";
+import { NativeModules, Platform, Text, View } from 'react-native';
 
-import BackSVG from "../../assets/svg/bx_arrow-back.svg";
+import BackSVG from '../../assets/svg/bx_arrow-back.svg';
 
-import * as S from "./style";
-import { useNavigation } from "@react-navigation/native";
+import * as S from './style';
+import { useNavigation } from '@react-navigation/native';
 
 export function Header() {
   const { goBack } = useNavigation();

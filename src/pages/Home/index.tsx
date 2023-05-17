@@ -1,28 +1,29 @@
-import { Main } from "../../template/Main";
-import * as S from "./styles";
-import { Button } from "../../components/Button";
-import { useNavigation } from "@react-navigation/native";
+import { Main } from '../../template/Main';
+import * as S from './styles';
+import { Button } from '../../components/Button';
+import { useNavigation } from '@react-navigation/native';
 
 export function Home() {
-  const { navigate } = useNavigation();
+  const navigation = useNavigation();
 
   function handleNavigateToRegisterCard() {
-    navigate("registerCard");
+    navigation.navigate('registerCard');
   }
 
   function handleNavigateToListCard() {
-    navigate("listCard");
+    navigation.navigate('listCard');
   }
 
   return (
     <Main>
-      <S.Container>
+      <S.Container testID="home-container">
         <S.WrapperTitle>
           <S.Title> Wallet Test </S.Title>
         </S.WrapperTitle>
 
         <S.WrapperButton>
           <Button
+            testID="list-button"
             typeButton="primary"
             text="meus cartões"
             onPress={handleNavigateToListCard}
@@ -30,6 +31,7 @@ export function Home() {
         </S.WrapperButton>
 
         <Button
+          testID="register-button"
           typeButton="secondary"
           text="cadastrar cartão"
           onPress={handleNavigateToRegisterCard}

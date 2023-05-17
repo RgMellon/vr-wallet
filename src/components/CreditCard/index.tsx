@@ -1,11 +1,13 @@
+export type CreditCardType = 'dark' | 'green';
+
 export type CreditCardProps = {
-  creditType: "dark" | "green";
+  creditType: CreditCardType;
   titularName: string;
   cardNumber: string;
   expirationDate: string;
 };
 
-import * as S from "./style";
+import * as S from './style';
 
 export function CreditCard({
   creditType,
@@ -14,19 +16,21 @@ export function CreditCard({
   expirationDate,
 }: CreditCardProps) {
   return (
-    <S.Container creditCardType={creditType}>
+    <S.Container creditCardType={creditType} testID="credit-card">
       <S.Title creditCardType={creditType}>
-        {creditType === "dark" ? "Black" : "Green"} Card
+        {creditType === 'dark' ? 'Black' : 'Green'} Card
       </S.Title>
 
       <S.Wrapper>
-        <S.Name creditCardType={creditType}>{titularName}</S.Name>
+        <S.Name creditCardType={creditType} testID="credit-titular">
+          {titularName}
+        </S.Name>
 
-        <S.CardNumber creditCardType={creditType}>
+        <S.CardNumber creditCardType={creditType} testID="credit-number">
           **** **** ****
           {cardNumber?.substring(15, cardNumber.length)}
         </S.CardNumber>
-        <S.Validation creditCardType={creditType}>
+        <S.Validation testID="expiration-date" creditCardType={creditType}>
           Validade {expirationDate}
         </S.Validation>
       </S.Wrapper>
