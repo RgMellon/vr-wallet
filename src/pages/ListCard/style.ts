@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components/native";
+import styled, { css } from 'styled-components/native';
 
 export const Container = styled.View`
   ${({ theme }) => css`
@@ -12,4 +12,11 @@ export const Content = styled.View`
   justify-content: center;
   align-items: center;
   position: relative;
+`;
+
+export const Empty = styled.Text`
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    font-size: ${theme.font.medium};
+  `}
 `;

@@ -1,21 +1,21 @@
-import { useState } from "react";
-import { ScrollView, useWindowDimensions, Pressable, View } from "react-native";
+import { useState } from 'react';
+import { ScrollView, useWindowDimensions, Pressable, View } from 'react-native';
 
-import { useGetListOfCard } from "../../hooks/useGetListOfCard";
+import { useGetListOfCard } from '../../hooks/useGetListOfCard';
 
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
   withTiming,
-} from "react-native-reanimated";
+} from 'react-native-reanimated';
 
-import { Load } from "../Load";
-import { CreditCard } from "../../components/CreditCard";
+import { Load } from '../Load';
+import { CreditCard } from '../../components/CreditCard';
 
-import * as S from "./style";
-import { CreditCardDTO } from "../../dto/creditCardDTO";
-import { Detail } from "../../template/Detail";
+import * as S from './style';
+import { CreditCardDTO } from '../../dto/creditCardDTO';
+import { Detail } from '../../template/Detail';
 
 const animationConfig = {
   damping: 4,
@@ -82,7 +82,7 @@ export function ListCard() {
   }
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1 }} testID="list-card">
       {load && <Load />}
 
       {!load && (
@@ -95,7 +95,7 @@ export function ListCard() {
                     width: 300,
                     height: 180,
                     borderRadius: 16,
-                    position: "absolute",
+                    position: 'absolute',
                   },
                   animatedSelectedCar,
                 ]}
@@ -104,7 +104,7 @@ export function ListCard() {
                 <CreditCard
                   cardNumber={currentCard?.number}
                   creditType={currentCard?.creditType}
-                  expirationDate={currentCard?.expiration_date || "00/00"}
+                  expirationDate={currentCard?.expiration_date || '00/00'}
                   titularName={currentCard?.name}
                 />
               </PressableAnimated>
@@ -121,6 +121,10 @@ export function ListCard() {
                   paddingTop: 90,
                 }}
               >
+                {list.length === 0 && (
+                  <S.Empty> Nenhum cartão cadastrado </S.Empty>
+                )}
+
                 {list.length > 0 &&
                   list.map((item, index) => (
                     <PressableAnimated
@@ -134,11 +138,12 @@ export function ListCard() {
                       onPress={() => {
                         handlePressCard(item);
                       }}
+                      testID={'credit-card-button'}
                     >
                       <CreditCard
                         cardNumber={item?.number}
                         creditType={item?.creditType}
-                        expirationDate={item?.expiration_date || "00/00"}
+                        expirationDate={item?.expiration_date || '00/00'}
                         titularName={item?.name}
                       />
                     </PressableAnimated>
