@@ -1,9 +1,9 @@
-import * as S from "./styles";
+import * as S from './styles';
 
-import upDetailBackground from "../../assets/img/background/up.png";
-import downDetailBackground from "../../assets/img/background/down.png";
-import { Image } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import upDetailBackground from '../../assets/img/background/up.png';
+import downDetailBackground from '../../assets/img/background/down.png';
+import { Image } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 type Props = {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ export function Main({ children }: Props) {
         source={upDetailBackground}
         resizeMode="contain"
         style={{
-          position: "absolute",
+          position: 'absolute',
           top: 0,
           left: -30,
           right: 0,
@@ -31,7 +31,7 @@ export function Main({ children }: Props) {
         source={downDetailBackground}
         resizeMode="contain"
         style={{
-          position: "absolute",
+          position: 'absolute',
           bottom: 0,
           width: 350,
           height: 236,
