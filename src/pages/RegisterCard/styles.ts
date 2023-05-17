@@ -1,9 +1,10 @@
-import { KeyboardAvoidingView } from "react-native";
-import styled from "styled-components/native";
+import { KeyboardAvoidingView } from 'react-native';
+import styled from 'styled-components/native';
 
 export const Container = styled(KeyboardAvoidingView)`
-  flex: 1;
   justify-content: center;
+  flex: 1;
+  z-index: 1;
 `;
 
 export const WrapperInput = styled.View`
