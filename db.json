@@ -1,0 +1,51 @@
+{
+  "cards": [
+    {
+      "id": "4ec42ba9-50af-40d2-af90-8312edbd9ca2",
+      "number": "3529 5435 3355 8727",
+      "cvv": "317",
+      "name": "John Doe",
+      "creditType": "green"
+    },
+    {
+      "id": "fc8288f1-d5f5-46a4-a053-1bbe0a6d9ab8",
+      "creditType": "green",
+      "number": "1111 1111 1111 1111",
+      "cvv": "123",
+      "name": "Renan Melo",
+      "expiration_date": "01/28"
+    },
+    {
+      "id": "19b2b553-92d8-4ae6-83b3-3ad34b6885fc",
+      "creditType": "dark",
+      "number": "1111 1111 1111 1111",
+      "cvv": "123",
+      "name": "Milena Hikari",
+      "expiration_date": "11/28"
+    },
+    {
+      "id": "e958b0ed-0d90-4059-8201-a9662d98813c",
+      "creditType": "dark",
+      "number": "1209 3031 9202 3910",
+      "cvv": "123",
+      "name": "Renan De Melo",
+      "expiration_date": "11/29"
+    },
+    {
+      "id": "7551713d-6803-4c0c-a287-6ae67c0bc795",
+      "creditType": "dark",
+      "number": "1233 2132 2131 2312",
+      "cvv": "123",
+      "name": "Rem",
+      "expiration_date": "11/29"
+    },
+    {
+      "id": "0d3ef854-99db-4d85-b4f8-fd1a67fb17f2",
+      "creditType": "dark",
+      "number": "1230 1239 2103 1230",
+      "cvv": "123",
+      "name": "Jose",
+      "expiration_date": "11/29"
+    }
+  ]
+}
