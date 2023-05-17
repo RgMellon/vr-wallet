@@ -13,6 +13,7 @@ export function useGetListOfCard() {
       setOptions({
         headerShown: false,
       });
+
       const response = await api.get("/cards");
       setList(response.data);
     } catch (err) {

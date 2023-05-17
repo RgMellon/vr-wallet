@@ -32,7 +32,7 @@ export function ListCard() {
   const [showDetail, setShowDetail] = useState(false);
 
   const { height } = useWindowDimensions();
-  const { list, load, error } = useGetListOfCard();
+  const { list, load } = useGetListOfCard();
 
   const selectedCarAxis = useSharedValue(0);
   const scrollViewAxis = useSharedValue(0);
@@ -121,27 +121,28 @@ export function ListCard() {
                   paddingTop: 90,
                 }}
               >
-                {list.map((item, index) => (
-                  <PressableAnimated
-                    key={index}
-                    style={[
-                      {
-                        marginTop: -90,
-                        height: 180,
-                      },
-                    ]}
-                    onPress={() => {
-                      handlePressCard(item);
-                    }}
-                  >
-                    <CreditCard
-                      cardNumber={item?.number}
-                      creditType={item?.creditType}
-                      expirationDate={item?.expiration_date || "00/00"}
-                      titularName={item?.name}
-                    />
-                  </PressableAnimated>
-                ))}
+                {list.length > 0 &&
+                  list.map((item, index) => (
+                    <PressableAnimated
+                      key={index}
+                      style={[
+                        {
+                          marginTop: -90,
+                          height: 180,
+                        },
+                      ]}
+                      onPress={() => {
+                        handlePressCard(item);
+                      }}
+                    >
+                      <CreditCard
+                        cardNumber={item?.number}
+                        creditType={item?.creditType}
+                        expirationDate={item?.expiration_date || "00/00"}
+                        titularName={item?.name}
+                      />
+                    </PressableAnimated>
+                  ))}
               </ScrollViewAnimated>
             </S.Content>
           </S.Container>
