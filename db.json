@@ -15,6 +15,14 @@
       "cvv": "123",
       "name": "Milena Hikari",
       "expiration_date": "11/28"
+    },
+    {
+      "id": "fc8288f1-d5f5-46a4-a053-1bbe0a6d9ab8",
+      "creditType": "green",
+      "number": "1111 1111 1111 1111",
+      "cvv": "123",
+      "name": "Renan Melo",
+      "expiration_date": "01/28"
     }
   ]
 }
