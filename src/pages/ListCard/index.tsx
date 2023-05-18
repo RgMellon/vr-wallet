@@ -89,25 +89,27 @@ export function ListCard() {
         <Detail>
           <S.Container>
             <S.Content>
-              <PressableAnimated
-                style={[
-                  {
-                    width: 300,
-                    height: 180,
-                    borderRadius: 16,
-                    position: 'absolute',
-                  },
-                  animatedSelectedCar,
-                ]}
-                onPress={handleHidde}
-              >
-                <CreditCard
-                  cardNumber={currentCard?.number}
-                  creditType={currentCard?.creditType}
-                  expirationDate={currentCard?.expiration_date || '00/00'}
-                  titularName={currentCard?.name}
-                />
-              </PressableAnimated>
+              {showDetail && (
+                <PressableAnimated
+                  style={[
+                    {
+                      width: 300,
+                      height: 180,
+                      borderRadius: 16,
+                      position: 'absolute',
+                    },
+                    animatedSelectedCar,
+                  ]}
+                  onPress={handleHidde}
+                >
+                  <CreditCard
+                    cardNumber={currentCard?.number}
+                    creditType={currentCard?.creditType}
+                    expirationDate={currentCard?.expiration_date || '00/00'}
+                    titularName={currentCard?.name}
+                  />
+                </PressableAnimated>
+              )}
 
               <ScrollViewAnimated
                 showsVerticalScrollIndicator={false}
