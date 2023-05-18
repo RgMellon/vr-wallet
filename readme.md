@@ -10,28 +10,70 @@
 
 ## 🤔 Sobre
 
-Projeto **Challenge Github**, projeto feito para o prcesso seletivo.
+Projeto **Wallet Test**
 
-Layout baseado [Nesse projeto](https://www.figma.com/file/ROaFck4gHEITw3vdUzSwsi/Test-Abril---Github-list?node-id=0%3A1)
+Layout baseado [Nesse projeto](https://www.figma.com/file/LQJIMG9Kg8kqL0821rBkiQ/Wallet-Test?node-id=2-1039)
 
 ---
 
-## DOWNLOAD APK
+## Json-server
 
-Caso utilize android você pode baixar o apk e rodar o app, basta baixar no link abaixo
+O Projeto utiliza JSON-SERVER, para uma melhor exeperiencia na hora de executar, e poder executar no emulador fisico, lendo o QRCODE, voce
+deverá
 
-[APK](https://expo.dev/artifacts/eas/98vXBE6zR55KXa9jnptoe1.apk)
+- Descobrir o seu ip
+- Entrar em **src/service/api.ts** e modificar o ip, pelo ip da sua maquina, depois rodar
+
+```js
+const api = axios.create({
+  baseURL: 'http://IP_DA_SUA_MAQUINA_AQUI:3000/',
+});
+```
+
+```
+json-server --watch db.json --host IP_DA_SUA_MAQUINA_AQUI  --port 3000
+```
+
+## Passo a passo para executar
+
+OBS: para executar o teste pelo celular fisico, baixe o expo-go nas stores
+
+O Projeto foi utilizado usando expo, então para executa-lo basta seguir os passos
+
+```bash
+  #clonar o repositorio
+  $ git clone https://github.com/RgMellon/vr-wallet.git
+
+  #entrar na pasta do projeto
+  $ cd vr-wallet
+
+  #instalar as dependencias
+  $ yarn
+
+  # Basta ler o codigo de barras que aparecerá pelo seu celular, caso tenho o EXPO-GO instalado, com isso o projeto deverá abrir. voce também pode apertar a tecla I para abrir no Emulador IOS ou A para abrir no emulador android
+  $ npx expo start
+
+  # Para rodar os testes
+
+  $ yarn jest
+
+```
 
 ## 📱 Preview do projeto
 
 Segue o preview em video do projeto
 
 <div>
-  <img style="margin: 5px" alt="login" src="https://i.imgur.com/fpxgylo.png" width="200">
+  <img style="margin: 5px" alt="login" src="https://i.imgur.com/LBjROFn.jpg" width="200">
 
-  <img style="margin: 5px" alt="login" src="https://i.imgur.com/keTCUTJ.png" width="200">
+  <img style="margin: 5px" alt="login" src="https://i.imgur.com/4eonCQ4.jpg" width="200">
 
-  <img style="margin: 5px" alt="login" src="https://i.imgur.com/G7d10GT.png" width="200">
+  <img style="margin: 5px" alt="login" src="https://i.imgur.com/kEZAU4m.jpg" width="200">
+
+  <img style="margin: 5px" alt="login" src="https://i.imgur.com/kdZrlXD.jpg" width="200">
+
+  <img style="margin: 5px" alt="login" src="https://i.imgur.com/FRDaipG.jpg" width="200">
+
 </div>
 
 ---
@@ -45,31 +87,10 @@ O projeto foi feito utilizando das seguintes tecnologias
 - Styled Components
 - Typescript
 - Axios
-- Redux
-- Redux Saga
+- Context
+- Hook
 - Jest
 
 ---
-
-## 📦 Como baixar o projeto
-
-```bash
-  #clonar o repositorio
-  $ git clone https://github.com/RgMellon/renan-goread-rn-challenge.git
-
-  #entrar na pasta do projeto
-  $ cd renan-goread-rn-challenge
-
-  #instalar as dependencias
-  $ yarn
-
-  #Basta ler o codigo de barras que aparecerá, com isso o projeto deverá abrir
-  $ npx expo start
-
-  # Para rodar os testes
-
-  $ yarn jest
-
-```
 
 Desenvolvido com ♥ por Renan Melo
